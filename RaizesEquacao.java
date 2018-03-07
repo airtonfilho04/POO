@@ -19,13 +19,26 @@ public class RaizesEquacao{
 		float coefC = scanner.nextFloat();
 
 		float delta = calcDelta(coefA, coefB, coefC);
+		System.out.println(delta);
 
 		if(delta == 0){
-			raizA = (-coefB) / 2 * coefA;
+			double raizA = (-coefB) / 2 * coefA;
+			double raizB = raizA;
+
+			System.out.println("Valor da raiz A: " + raizA);
+			System.out.println("Valor da raiz B: " + raizB);
 		}
 
 		else if(delta > 0){
+			double raizA = - coefB + Math.sqrt(delta) / 2 * coefA;
+			double raizB = - coefB - Math.sqrt(delta) / 2 * coefA;
 			
+			System.out.println("Valor da raiz A: " + raizA);
+			System.out.println("Valor da raiz B: " + raizB);
+		}
+
+		else{
+			System.out.println("Nao sei ainda!");
 		}
 	}
 }
