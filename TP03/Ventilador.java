@@ -11,12 +11,12 @@ public class Ventilador{
 	}
 
 	public void ligar(){
-		isLigado = true;
+		this.isLigado = true;
 		this.velocidade = 1;
 	}
 
 	public void desligar(){
-		isLigado = false;
+		this.isLigado = false;
 	}
 
 	public void aumentarVelocidade(){
@@ -38,22 +38,22 @@ public class Ventilador{
 	}
 
 	public void ligarRotacao(){
-		isRodando = true;
+		this.isRodando = true;
 	}
 
 	public void desligarRotacao(){
-		isRodando = false;
+		this.isRodando = false;
 	}
 
 	public boolean isLigado(){
-		return isLigado;
+		return this.isLigado;
 	}
 
 	public boolean isRodando(){
-		return isRodando;
+		return this.isRodando;
 	}
 
 	public int getVelocidade(){
-		return velocidade;
+		return this.velocidade;
 	}
 }
