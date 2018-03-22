@@ -15,7 +15,7 @@ public class Calculadora{
 		return acumulador;
 	}
 
-	public double somarAcum(double numA){
+	public double somar(double numA){
 		return somar(acumulador, numA);
 	}
 
@@ -24,7 +24,7 @@ public class Calculadora{
 		return acumulador;
 	}
 
-	public double subtrairAcum(double numA){
+	public double subtrair(double numA){
 		return subtrair(acumulador, numA);
 	}
 
@@ -33,7 +33,7 @@ public class Calculadora{
 		return acumulador;
 	}
 
-	public double multiplicarAcum(double numA){
+	public double multiplicar(double numA){
 		return multiplicar(acumulador, numA);
 	}
 
@@ -42,7 +42,7 @@ public class Calculadora{
 		return acumulador;
 	}
 
-	public double dividirAcum(double numA){
+	public double dividir(double numA){
 		return dividir(acumulador, numA);
 	}
 }
