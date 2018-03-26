@@ -65,4 +65,13 @@ public class VentiladorTeste{
 			System.out.println("testeDesligarRotacao falhou!");
 		}
 	}
+
+	public void main(Strings[] args){
+		testeLigar();
+		testeDesligar();
+		testeLigarRotacao();
+		testeDesligarRotacao();
+		testeAumentarVelocidade();
+		testeDiminuirVelocidade();
+	}
 }
