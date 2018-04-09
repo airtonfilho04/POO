@@ -1,19 +1,22 @@
 package br.ufc.dc.poo.banco;
 
 import br.ufc.dc.poo.banco.contas.Conta;
+import br.ufc.dc.poo.banco.contas.ContaPoupanca;
 
-public class Banco{
+public class BancoArray{
 	
 	private Conta[] contas; 
 	private int	indice = 0;
+  private double taxa;
 
-	public Banco(){ 
+	public BancoArray(){ 
     	contas = new Conta[100]; 
+      taxa = 0.01;
    	}
 
    	public void cadastrar(Conta conta){ 
-       	contas[indice] = conta; 
-		indice++; 
+      contas[indice] = conta; 
+		  indice++; 
    	}
 
    	private Conta procurar(String numero){
@@ -79,19 +82,31 @@ public class Banco{
      	}
   	}
 
-  	public void transferir(String origem, String destino, double valor){
+  public void transferir(String origem, String destino, double valor){
 
-  		Conta contaOrigem;
-  		Conta contaDestino; 
-     	contaOrigem = procurar(origem);
-     	contaDestino = procurar(destino);
+		Conta contaOrigem;
+ 		Conta contaDestino; 
+   	contaOrigem = procurar(origem);
+   	contaDestino = procurar(destino);
 
-     	if((contaOrigem != null) && (contaDestino != null)){  
+    if((contaOrigem != null) && (contaDestino != null)){  
 			contaOrigem.debitar(valor);
 			contaDestino.creditar(valor);  
-     	} 
+    } 
 		else{  
 			System.out.println("Erro! O númeo de uma das contas está errado!"); 
      	} 
-  	}    	
+  	}
+
+    public void renderJuros(String numero){
+          ContaPoupanca conta;
+          conta = procurar(numero);
+
+          if(conta != null){
+            conta.renderJuros(taxa);
+          }
+          else{
+            System.out.println("Conta Inexistente!");
+          }
+        }   	
 }
