@@ -98,15 +98,15 @@ public class BancoVector{
      	} 
   	} 
 
-    public void renderJuros(String numero){
-      Conta conta;
-      conta = procurar(numero);
+     public void renderJuros(String numero){
+          Conta conta;
+          conta = procurar(numero);
 
-      if(conta != null){
-        conta.renderJuros(taxa);
-      }
-      else{
-        System.out.println("Conta Inexistente!");
-      }
-    }    	
+          if((conta != null) && conta instanceof ContaPoupanca){
+            ((ContaPoupanca)conta).renderJuros(this.taxa);
+          }
+          else{
+            System.out.println("Conta Inexistente!");
+          }
+        }    	
 }

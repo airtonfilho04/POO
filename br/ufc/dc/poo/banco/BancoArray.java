@@ -99,11 +99,11 @@ public class BancoArray{
   	}
 
     public void renderJuros(String numero){
-          ContaPoupanca conta;
+          Conta conta;
           conta = procurar(numero);
 
-          if(conta != null){
-            conta.renderJuros(taxa);
+          if((conta != null) && conta instanceof ContaPoupanca){
+            ((ContaPoupanca)conta).renderJuros(this.taxa);
           }
           else{
             System.out.println("Conta Inexistente!");
