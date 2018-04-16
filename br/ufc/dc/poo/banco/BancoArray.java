@@ -2,6 +2,7 @@ package br.ufc.dc.poo.banco;
 
 import br.ufc.dc.poo.banco.contas.Conta;
 import br.ufc.dc.poo.banco.contas.ContaPoupanca;
+import br.ufc.dc.poo.banco.contas.ContaEspecial;
 
 public class BancoArray{
 	
@@ -98,9 +99,9 @@ public class BancoArray{
      	} 
   	}
 
-    public void renderJuros(String numero){
-          Conta conta;
-          conta = procurar(numero);
+  public void renderJuros(String numero){
+    Conta conta;
+    conta = procurar(numero);
 
           if((conta != null) && conta instanceof ContaPoupanca){
             ((ContaPoupanca)conta).renderJuros(this.taxa);
@@ -108,5 +109,17 @@ public class BancoArray{
           else{
             System.out.println("Conta Inexistente!");
           }
-        }   	
+        }
+
+  public void renderBonus(String  numero) {
+    Conta conta;
+    conta = procurar(numero);
+
+          if((conta != null) && conta instanceof ContaEspecial){
+            ((ContaEspecial)conta).renderBonus();
+          }
+          else{
+            System.out.println("Conta Inexistente!");
+          }
+        } 	
 }

@@ -3,6 +3,7 @@ package br.ufc.dc.poo.banco;
 import java.util.Vector;
 import br.ufc.dc.poo.banco.contas.Conta;
 import br.ufc.dc.poo.banco.contas.ContaPoupanca;
+import br.ufc.dc.poo.banco.contas.ContaEspecial;
 
 public class BancoVector{
 	 
@@ -109,4 +110,16 @@ public class BancoVector{
             System.out.println("Conta Inexistente!");
           }
         }    	
+
+  public void renderBonus(String  numero) {
+    Conta conta;
+    conta = procurar(numero);
+
+          if((conta != null) && conta instanceof ContaEspecial){
+            ((ContaEspecial)conta).renderBonus();
+          }
+          else{
+            System.out.println("Conta Inexistente!");
+          }
+        }   
 }
