@@ -1,10 +1,8 @@
 package br.ufc.dc.poo.banco;
 
-import br.ufc.dc.poo.banco.contas.Conta;
-import br.ufc.dc.poo.banco.contas.ContaPoupanca;
-import br.ufc.dc.poo.banco.contas.ContaEspecial;
+import br.ufc.dc.poo.banco.contas.*;
 
-public class BancoArray{
+public class BancoArray implements IBanco {
 	
 	private Conta[] contas; 
 	private int	indice = 0;
@@ -26,7 +24,7 @@ public class BancoArray{
 		boolean achou = false; 
      	
      	while ((!achou) && (i < indice)){ 
-       		if (contas[i].numero().equals(numero)){  
+       		if (contas[i].getNumero().equals(numero)){  
        			achou = true; 
        		} 
        		else{  
@@ -74,7 +72,7 @@ public class BancoArray{
   		conta = procurar(numero);
 
   		if(conta != null){  
-			double saldo = conta.saldo();
+			double saldo = conta.getSaldo();
 			return saldo;  
      	} 
 		else{  

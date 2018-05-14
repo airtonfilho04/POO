@@ -1,12 +1,11 @@
 package br.ufc.dc.poo.banco;
 
 import java.util.Vector;
-import br.ufc.dc.poo.banco.contas.Conta;
-import br.ufc.dc.poo.banco.contas.ContaPoupanca;
-import br.ufc.dc.poo.banco.contas.ContaEspecial;
+import br.ufc.dc.poo.banco.contas.*;
 
-public class BancoVector{
-	 
+public class BancoVector implements IBanco{
+	
+  private IRepositorioConta contas;  
   private Vector<Conta> contas;
 	private int	indice = 0;
   private double taxa;
@@ -26,7 +25,7 @@ public class BancoVector{
 		boolean achou = false; 
      	
      	while ((!achou) && (i < contas.size())){ 
-       		if (contas.get(i).numero().equals(numero)){  
+       		if (contas.get(i).getNumero().equals(numero)){  
        			achou = true; 
        		} 
        		else{  
@@ -74,7 +73,7 @@ public class BancoVector{
   		conta = procurar(numero);
 
   		if(conta != null){  
-			double saldo = conta.saldo();
+			double saldo = conta.getSaldo();
 			return saldo;  
      	} 
 		else{  

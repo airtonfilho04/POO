@@ -7,6 +7,6 @@ public ContaPoupanca(String numero){
   } 
 
 public void renderJuros(double taxa){ 
-    creditar(saldo() * taxa); 
+    creditar(getSaldo() * taxa); 
   } 
 } 
