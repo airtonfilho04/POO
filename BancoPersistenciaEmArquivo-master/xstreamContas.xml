@@ -1,0 +1,11 @@
+<list>
+  <br.ufc.br.poo.banco.conta.Conta>
+    <numero>1000</numero>
+    <saldo>1000.0</saldo>
+  </br.ufc.br.poo.banco.conta.Conta>
+  <br.ufc.br.poo.banco.conta.ContaEspecial>
+    <numero>999</numero>
+    <saldo>0.0</saldo>
+    <bonus>0.0</bonus>
+  </br.ufc.br.poo.banco.conta.ContaEspecial>
+</list>
