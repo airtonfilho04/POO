@@ -24,22 +24,38 @@ public class XStreamUsuario implements IRepositorioUsuario {
     
     public XStreamUsuario() {
 	xstream = new XStream();
-	atualizar();
+	recuperar();
     }
     
     @Override
     public void cadastrar(Perfil usuario) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     public Perfil buscar(String usuario) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return usuarios;
     }
 
     @Override
     public void atualizar(Perfil usuario) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        salvar();
     }
     
+    private void recuperar() {
+	File file = new File(CAMINHO_ARQUIVO);
+	if(!file.exists()) {
+            usuarios = new Vector<>();
+            return;
+	}
+	usuarios = (Vector<Perfil>)xstream.fromXML(file);
+	}
+	
+	private void salvar() {
+		try {
+			xstream.toXML(usuarios, new FileOutputStream(CAMINHO_ARQUIVO));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
 }
